@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <ul class="list-group">
+
+        {% for task in tasks %}
+            <li class="list-group-item task-item">
+                <div class="col-xs-1">
+                    {% if task.done %}
+                        <span class="fa fa-check-square-o"></span>
+                    {% else %}
+                        <span class="fa fa-square-o"></span>
+                    {% endif %}
+                </div>
+                <div class="col-xs-11">{{ task.name }}</div>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
